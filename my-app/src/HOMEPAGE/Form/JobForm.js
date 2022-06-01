@@ -1,20 +1,35 @@
 import React,{useState,useEffect} from "react"
-import Card from "../../Boxes/Card";
 import "./JobForm.css"
+import Card from "../../Boxes/Card";
+
 const JobForm = (props) => {
     
 const[location,updateLocation] = useState()
 const [jobDescription,updateJobDescription] = useState()
 const locationHandler = (event) =>{
-    
-    updateLocation(event.target.value)
+    setTimeout(() =>{
+        updateLocation(event.target.value)
+        console.log('location')
+    },5000)//adding these functions to input so not as many renders and chnages happen as much this will help the website run smoother and faster not having to handle so many requests
+  
 }
 const jobdescriptionHandler = (event) =>{
-    updateJobDescription(event.target.value)
+   
+    setTimeout(() =>{
+        updateJobDescription(event.target.value)
+        console.log('changes ')
+    },5000)
+   
+   
+  
+   
+    
+    
    
 }
 const submitHandler = (event) =>{
     event.preventDefault()
+    
     props.inputs(jobDescription,location)
 }
 
