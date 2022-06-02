@@ -9,8 +9,8 @@ const [jobDescription,updateJobDescription] = useState()
 const locationHandler = (event) =>{
     setTimeout(() =>{
         updateLocation(event.target.value)
-        console.log('location')
-    },5000)//adding these functions to input so not as many renders and chnages happen as much this will help the website run smoother and faster not having to handle so many requests
+        console.log(event.target.value)
+    },50)//adding these functions to input so not as many renders and chnages happen as much this will help the website run smoother and faster not having to handle so many requests
   
 }
 const jobdescriptionHandler = (event) =>{
@@ -18,8 +18,9 @@ const jobdescriptionHandler = (event) =>{
     setTimeout(() =>{
         updateJobDescription(event.target.value)
         console.log('changes ')
-    },5000)
-   
+        
+    },50)
+  
    
   
    
@@ -31,6 +32,8 @@ const submitHandler = (event) =>{
     event.preventDefault()
     
     props.inputs(jobDescription,location)
+    console.log(location)
+    
 }
 
 

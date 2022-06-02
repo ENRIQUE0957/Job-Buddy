@@ -8,9 +8,11 @@ return(
 
 
 <ul className = "list">
-<li className = "title"><h2>job buddy</h2></li>
-<li class = "find-jobs">Find jobs</li>
-<li className = "reviews">Reviews</li>
+<li className = "title"><h2 className='Job-buddy'>job buddy</h2></li>
+<li className = "find-jobs">Find jobs</li>
+<li className = "reviews">
+<button className = "button">reviews</button>
+    </li>
 <li><button className = "button">Sign Up</button></li>     
 
     

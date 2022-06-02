@@ -5,13 +5,14 @@
     margin:0;
 }
 .Main-header{
-    padding:2rem;
+    padding:1rem 2.4rem;
     margin:0;
     background-color:rgba(255, 255, 255, 0.267);
     position:absolute;
     top:0%;
     font-size:1rem;
-    width:100%;
+    
+    
 
 }
 .list{
@@ -30,4 +31,11 @@ margin-right:2rem;
 }
 .title{
 margin-right:2rem;
+}
+.Job-buddy{
+    background-image:linear-gradient(to right, rgba(240,236,9,0.864),rgba(229,128,117,0.912));
+    background-clip:text;
+    -webkit-background-clip: text;
+    color:transparent;
+    font-size:1.5rem;
 }
