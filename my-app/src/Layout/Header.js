@@ -10,9 +10,8 @@ const Header = (props) =>{
     return (
         <Fragment>
         <header className={classes.header}>
-        <h2>JobBuddy!
+        <h2 className={classes.title}>JobBuddy!</h2>
         <img src = {limeimage} alt = "headerLogo" className={classes.headerLogo}/>
-        </h2>
             <ul className={classes.Headerlist}>
             <li><button className={classes.button}>my jobs</button></li>
 
