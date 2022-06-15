@@ -3,11 +3,13 @@
     background-color:white
 }
 
-.label{
 
-}
 .input{
 font-weight:bold;
+margin-right:0.5rem;
+padding:0.3rem 0.3rem;
 
 }
-
+.label{
+    margin-right:0.3rem;
+}

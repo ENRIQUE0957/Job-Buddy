@@ -1,0 +1,10 @@
+.modal{
+    position:fixed;
+    background-color:white;
+    padding:1rem;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+    animation:slide-down 300ms ease-out forwards;
+    border-radius:15px;
+    top:20%;
+    left:30%
+}
