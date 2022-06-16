@@ -6,5 +6,6 @@
     animation:slide-down 300ms ease-out forwards;
     border-radius:15px;
     top:20%;
-    left:30%
+    left:30%;
+    font-family: 'Roboto', sans-serif;
 }

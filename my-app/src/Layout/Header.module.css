@@ -30,6 +30,7 @@
 }
 .Headerlist{
     list-style: none;
+    display:flex;
 }
 .title{
     margin-right:1rem

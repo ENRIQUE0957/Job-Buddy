@@ -13,6 +13,7 @@ const Header = (props) =>{
         <h2 className={classes.title}>JobBuddy!</h2>
         <img src = {limeimage} alt = "headerLogo" className={classes.headerLogo}/>
             <ul className={classes.Headerlist}>
+            <li ><button className={classes.button}>SIGN UP!</button></li>
             <li><button className={classes.button}>my jobs</button></li>
 
             </ul>
