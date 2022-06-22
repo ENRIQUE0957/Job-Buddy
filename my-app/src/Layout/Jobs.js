@@ -19,7 +19,6 @@ const Jobs = (props)=>{
     
 return(
         <div className={classes.jobs}>
-        <Modal>
         {props.jobs.map((job) =>(
             <Job 
             jobName ={job.job1}
@@ -30,7 +29,7 @@ return(
         ))}
         
         
-        </Modal>
+       
         </div>
 ) 
 }
