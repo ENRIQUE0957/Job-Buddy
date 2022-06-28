@@ -14,10 +14,10 @@ const zipCodeReducer = (state,action) =>{
 
 const jobReducer = (state,action)=>{
     if(action.type === "JOB-DESCRIPTION"){
-        return{value:action.val,isValid:action.val.lenght>0}
+        return{value:action.val,isValid:action.val.lenght>5}
     }
     if(action.type === "BLUR"){
-        return{value:state.value,isValid:state.value.length>0}
+        return{value:state.value,isValid:state.value.length>5}
     }
     return{value:state,isValid:false}
 }
@@ -71,7 +71,7 @@ const Form = props => {
         dispatchJob({val:event.target.value,type:"JOB-DESCRIPTION"})
         
         
-        setFormisValid(event.target.value.length > 0)
+        setFormisValid(event.target.value.length > 5)
     }
     const validateJobLocation = (event)=>{
         dispatchJob({type:"BLUR"})
