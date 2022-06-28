@@ -14,3 +14,37 @@ font-family: 'Roboto', sans-serif;;
 .label{
     margin-right:0.3rem;
 }
+.inputBox{
+    margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column; 
+}
+.invalid{
+    border-color: red;
+  background: #fbdada;
+}
+.disableLabel{
+    background:red;
+    border-color:red
+}
+.control {
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+.control.invalid input {
+  border-color: red;
+  background: #fbdada;
+}
+.disabled,
+button:focus.disabled
+button:hover:disabled,
+button:active:disabled {
+  background: #ccc;
+  border-color: rgb(212, 4, 4);
+  color: #666666;
+  cursor: not-allowed;
+  
+}
