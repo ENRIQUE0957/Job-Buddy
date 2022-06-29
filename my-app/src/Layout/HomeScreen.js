@@ -5,6 +5,7 @@ import Modal from "../UI/Modal";
 import Jobs from "./Jobs";
 const HomeScreen = (props) =>{
     const [showJobs,UpdateShowJobs] = useState(false)
+    const [data1,updateJobData] = useState([])
     const jobSelection  =[
         {
         job1:"Full-stack-developer",
@@ -33,19 +34,24 @@ const HomeScreen = (props) =>{
     //function to return zipcode from form 
     const inputs = (zipcode,job) =>{
         console.log(zipcode,job)
-        if(zipcode != undefined){
-            UpdateShowJobs(true)
-        }
+        
     }
+    const webData = (data)=>{
+        //console.log(data)
+        updateJobData(data)
+        
+        
+    }
+    console.log(data1)
     return(
         <Fragment>
             <Modal>
-            <Form inputHandle = {inputs}>
+            <Form inputHandle = {inputs} asyncData = {webData}>
 
             </Form>
             </Modal>
 
-             {showJobs&&<Jobs jobs = {jobSelection}></Jobs>}
+             <Jobs jobs ={data1} ></Jobs>
 
 
 

@@ -1,5 +1,5 @@
 .form{
-    padding:4rem 3rem;
+    padding:2rem 7rem;
     background-color:white
 }
 
@@ -54,6 +54,7 @@ button:active:disabled {
   cursor: not-allowed;
   padding:0.3rem 0.3rem;
   border-radius:8px;
+  margin-right:0.5rem;
  
   
 }

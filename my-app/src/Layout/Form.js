@@ -26,9 +26,9 @@ const Form = props => {
     const[formisValid,setFormisValid]=useState(false)
     const [inputZipCode, updateInputZipcode] = useState('')
     const [inputJob, updateInputJob] = useState('')
-    const locationRef = useRef()
+    const locationRef = useRef('')
     const [erroModal, updateErorrModal] = useState(true)
-    
+    const [defaultValue,updateDefaultValue] = useState(false)
     const [zipCodeInput,dispatchZipcode]=useReducer(zipCodeReducer,({value:'',isValid:null}))
     const [jobInput,dispatchJob]=useReducer(jobReducer,({value:'',isValid:null}))
     const{isValid,zipCodeisValid} = zipCodeInput
@@ -49,7 +49,7 @@ const Form = props => {
         console.log('cleaned up')
         clearTimeout(indentifier)
     }
-    },[zipCodeisValid])
+    },[zipCodeisValid,jobInputisValid])
 
 
 
@@ -78,15 +78,19 @@ const Form = props => {
     }
     //function to test the geogle API
     async function geogleAPI(){
-       const response =  await fetch("https://www.themuse.com/api/public/jobs?company=Amazon&category=Software%20Engineering&level=Entry%20Level&level=Internship&page=1")
+       const response =  await fetch(`https://www.themuse.com/api/public/jobs?category=${jobInput.value}&page=1`)
        const data =await response.json()
        console.log(data)
+       props.asyncData(data)
     }
     const submitHandler = event => {
         event.preventDefault()
-       
         console.log(zipCodeInput)
+        props.inputHandle(zipCodeInput.value,jobInput.value)
+        updateDefaultValue(true)
         console.log(jobInput)
+        
+       
         
         //updateErorrModal(jobInput.value.length>0 && zipCodeInput.value.length>=5)
         /*event.preventDefault()
@@ -124,14 +128,15 @@ const Form = props => {
     return (
         <form className={classes.form} onSubmit={submitHandler}>
             <h2>Search Jobs</h2>
+            {defaultValue&&<p>Success!!</p>}
             <div >
             <label className={classes.label} htmlFor="location">location</label>
-            <input value ={zipCodeInput.value} className = {`${formisValid === false?classes.invalid:classes.inputBox}`} onChange={locationHandler} onBlur={validateZipcode} id="location"></input>
+            <input   ref={locationRef} className = {`${formisValid === false?classes.invalid:classes.inputBox}`} onChange={locationHandler} onBlur={validateZipcode} id="location"></input>
             </div>
             {!erroModal&&<ErrorModal >Not a valid response</ErrorModal>}
             
             <label className={classes.label} htmlFor="job">Job-Description</label>
-            <input value = {inputJob.value} type="text"  className = {`${formisValid === false?classes.invalid:classes.inputBox}`}onChange={jobHandler} onBlur = {validateJobLocation} id="job"></input>
+            <input  type="text"  className = {`${formisValid === false?classes.invalid:classes.inputBox}`}onChange={jobHandler} onBlur = {validateJobLocation} id="job"></input>
             
             <button className={`${formisValid === false?classes.disabled:classes.input}`} onClick={geogleAPI}>submit</button>
         </form>
